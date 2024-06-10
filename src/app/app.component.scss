@@ -1,0 +1,32 @@
+@import 'src/assets/styles/variables.scss';
+@import 'src/assets/styles/reset.scss';
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.btn-container.primary-buttons {
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 8px;
+}
+
+.primary-btn {
+  padding: 12px 20px;
+}
+
+.secondary-btn {
+  border: 1px solid $oscuro;
+  padding: 8px 16px;
+  background-color: transparent;
+}
