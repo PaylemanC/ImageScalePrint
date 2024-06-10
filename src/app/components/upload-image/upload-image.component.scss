@@ -1,0 +1,104 @@
+@import 'src/app/app.component.scss';
+
+.upload-image-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  align-items: center;
+  padding: 16px;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.upload-image__title {
+  font-size: 2rem;
+}
+
+.upload-image__fields, .field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-image__fields {
+  gap: 16px;
+}
+
+.field {
+  gap: 4px;
+
+  label {
+    font-weight: bold;
+  }
+
+  input {
+    width: 80px;
+    border: none;
+    border-bottom: 2px solid $oscuro;
+    padding: 4px;
+    font-size: 1.8rem;
+    text-align: center;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
+
+.upload-image__warning {
+  color: rgba(0, 0, 0, 0.8);
+  margin-top: 8px;
+}
+
+.upload-image__warning-borders {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+canvas {
+  border: 2px dashed #adadad;
+  height: 0;
+  width: 0;
+}
+
+.auto-adjust__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 1.7rem;
+  margin-top: 8px;
+}
+
+.auto-adjust__buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.auto-adjust__title span {
+  @include span-icons('../../../assets/icons/magic-tool.svg', 24px, 24px);
+}
+
+.upload-image__insert-btn span {
+  @include span-icons('../../../assets/icons/photo-down.svg', 24px, 24px);
+}
+
+.upload-image__download-btn span {
+  @include span-icons('../../../assets/icons/download.svg', 24px, 24px);
+}
+
+.upload-image__auto-adjust {
+  margin: 8px 0 2px;
+}
+
+.upload-image__auto-adjust + p  {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.change-btn--container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}

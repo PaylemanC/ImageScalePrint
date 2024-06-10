@@ -8,7 +8,7 @@
 </div>
 <button (click)="openModalTutorial()" class="open-tutorial-btn"></button>
 <app-modal [isOpenModal]="showModalImage" (modalClosed)="onModalImageClosed()">
-  <app-upload-image (close)="onModalImageClosed()"></app-upload-image>
+  <app-upload-image (close)="onModalImageClosed()" [orientationA4]="orientation" [borders]="borders"></app-upload-image>
 </app-modal>
 <app-modal [isOpenModal]="showModalTutorial" (modalClosed)="onModalTutorialClosed()">
   <app-tutorial (close)="onModalTutorialClosed()"></app-tutorial>

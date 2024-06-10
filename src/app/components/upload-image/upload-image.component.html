@@ -1,1 +1,46 @@
-<p>upload-image works!</p>
+<div class="upload-image-content">
+  <p class="upload-image__title">Ajusta tu imagen.</p>
+  <form>
+    <div class="form-content">
+      <div class="upload-image__fields">
+        <div class="field">
+          <label for="width-img">Ancho:</label>
+          <input type="number" name="width-img" [(ngModel)]="width">
+          <p>cm</p>
+        </div>
+        <div class="field">
+          <label for="height-img">Alto:</label>
+          <input type="number" name="height-img" [(ngModel)]="height">
+          <p>cm</p>
+        </div>
+      </div>
+      <div *ngIf="borders === 'con bordes'; else sinBordes">
+        <p class="upload-image__warning">*No sobrepases los {{ orientationA4 === 'horizontal' ? (sizeY - 1) + ' x ' + (sizeX - 1): (sizeX - 1) + ' x ' + (sizeY - 1) }} cm del lienzo A4.</p>
+        <p class="upload-image__warning-borders">!! Hoja con bordes de 5mm.</p>
+      </div>
+      <ng-template #sinBordes>
+        <p class="upload-image__warning">*No sobrepases los {{ orientationA4 === 'horizontal' ? sizeY + ' x ' + sizeX : sizeX + ' x ' + sizeY }} cm del lienzo A4.</p>
+      </ng-template>
+    </div>
+    <div class="form-buttons btn-container">
+      <button type="submit" (click)="applyMeasure()" class="upload-image__insert-btn secondary-btn btn" [disabled]="measureBtnDisabled">Aceptar medidas</button>
+      <input type="file" accept="image/*" (change)="onFileSelected($event)" id="upload-image-btn" class="secondary-btn btn" [disabled]="uploadBtnDisabled">
+    </div>
+  </form>
+  <div class="change-btn--container" *ngIf="!finishBtnDisabled">
+    <button type="button" (click)="openFileSelector()" class="upload-image__insert-btn secondary-btn btn" [disabled]="finishBtnDisabled">Cambiar imagen</button>
+  </div>
+  <canvas id="canvas-img"></canvas>
+  <div class="auto-adjust--container" *ngIf="!finishBtnDisabled">
+    <p class="auto-adjust__title"><span></span>Ajuste automático</p>
+    <div class="auto-adjust__buttons">
+      <button type="button" (click)="fillImage()" class="upload-image__auto-adjust secondary-btn btn" [disabled]="finishBtnDisabled">Rellenar</button>
+      <button type="button" (click)="centerImage()" class="upload-image__auto-adjust secondary-btn btn" [disabled]="finishBtnDisabled">Centrar</button>
+      <button type="button" (click)="fitImage()" class="upload-image__auto-adjust secondary-btn btn" [disabled]="finishBtnDisabled">Estirar</button>
+    </div>
+  </div>
+  <div class="btn-container">
+    <button class="upload-image__insert-btn btn primary-btn" id="insert-image-btn" (click)="insertImage()" [disabled]="finishBtnDisabled"><span></span>Aceptar e insertar</button>
+    <button class="upload-image__download-btn btn primary-btn" id="download-image-btn" (click)="downloadImage()" [disabled]="finishBtnDisabled"><span></span>Descargar imagen</button>
+  </div>
+</div>
