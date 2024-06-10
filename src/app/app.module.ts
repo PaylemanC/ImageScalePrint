@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CanvasComponent } from './components/canvas/canvas.component';
@@ -16,7 +17,8 @@ import { TutorialComponent } from './components/tutorial/tutorial.component';
     TutorialComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

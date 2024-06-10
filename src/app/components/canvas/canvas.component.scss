@@ -1,0 +1,36 @@
+@import 'src/app/app.component.scss';
+
+.canvas-options {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 19px 0;
+}
+
+.canvas-options__option-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid $oscuro;
+  border-radius: 8px;
+  padding: 12px 16px;
+  width: 140px;
+}
+
+.canvas-options__option-group p {
+  font-size: 18px;
+  font-weight: 500;
+  position: absolute;
+  background: $background-grey;
+  padding: 0 4px;
+  top: -12px;
+}
+
+input {
+  margin-right: 6px;
+}
+
+label, input {
+  cursor: pointer;
+}

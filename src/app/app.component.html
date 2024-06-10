@@ -4,7 +4,7 @@
     <button class="upload-btn--modal btn primary-btn" (click)="openModalImage()"><span></span>Subir imagen</button>
     <button class="download-btn btn primary-btn"><span></span>Descargar PDF</button>
   </div>
-  <app-canvas></app-canvas>
+  <app-canvas (pdfCanvas)="receiveCanvas($event)" (orientationA4)="receiveOrientation($event)" (bordersA4)="receiveBorders($event)"></app-canvas>
 </div>
 <button (click)="openModalTutorial()" class="open-tutorial-btn"></button>
 <app-modal [isOpenModal]="showModalImage" (modalClosed)="onModalImageClosed()">

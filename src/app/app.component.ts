@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { fabric } from 'fabric';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ImageScalePrint';
+  canvas: fabric.Canvas | undefined = undefined;
+  title: string = 'Título';
+  orientation: string = 'horizontal';
+  borders: string = '';
 
   showModalImage: boolean = false;
   showModalTutorial: boolean = false;
@@ -29,5 +33,17 @@ export class AppComponent {
 
   onModalTutorialClosed() {
     this.showModalTutorial = false;
+  }
+
+  receiveCanvas(canvas: fabric.Canvas) {
+    this.canvas = canvas;
+  }
+
+  receiveOrientation(orientation: string) {
+    this.orientation = orientation;
+  }
+
+  receiveBorders(option: string) {
+    this.borders = option;
   }
 }

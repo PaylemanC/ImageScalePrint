@@ -1,1 +1,25 @@
-<p>canvas works!</p>
+<div class="canvas-options">
+  <div class="canvas-options__option-group">
+    <p>Bordes</p>
+    <div class="input-group">
+      <input type="radio" name="borders" id="con_bordes" value="con bordes" (change)="onChangeBorders($event)" checked>
+      <label for="con_bordes">Con bordes</label>
+    </div>
+    <div class="input-group">
+      <input type="radio" name="borders" id="sin_bordes" value="sin bordes" (change)="onChangeBorders($event)">
+      <label for="sin_bordes">Sin bordes</label>
+    </div>
+  </div>
+  <div class="canvas-options__option-group">
+    <p>Orientación</p>
+    <div class="input-group">
+      <input type="radio" name="orientation" id="horizontal" value="horizontal" [(ngModel)]="orientation" (change)="onOrientationChange($event)" checked>
+      <label for="horizontal">Horizontal</label>
+    </div>
+    <div class="input-group">
+      <input type="radio" name="orientation" id="vertical" value="vertical" [(ngModel)]="orientation" (change)="onOrientationChange($event)">
+      <label for="vertical">Vertical</label>
+    </div>
+  </div>
+</div>
+<canvas id="canvas-a4"></canvas>
