@@ -1,9 +1,15 @@
-<div id="printing">
+<div id="printing" [ngClass]="{'is-modal-active': isModalImageActive}">
   <input type="text" placeholder="Título" id="pdf-title">
   <div class="btn-container primary-buttons">
-    <button class="upload-btn--modal btn primary-btn"><span></span>Subir imagen</button>
+    <button class="upload-btn--modal btn primary-btn" (click)="openModalImage()"><span></span>Subir imagen</button>
     <button class="download-btn btn primary-btn"><span></span>Descargar PDF</button>
   </div>
   <app-canvas></app-canvas>
 </div>
-<app-upload-image></app-upload-image>
+<button (click)="openModalTutorial()" class="open-tutorial-btn"></button>
+<app-modal [isOpenModal]="showModalImage" (modalClosed)="onModalImageClosed()">
+  <app-upload-image (close)="onModalImageClosed()"></app-upload-image>
+</app-modal>
+<app-modal [isOpenModal]="showModalTutorial" (modalClosed)="onModalTutorialClosed()">
+  <app-tutorial (close)="onModalTutorialClosed()"></app-tutorial>
+</app-modal>

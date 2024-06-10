@@ -7,6 +7,29 @@
   height: $height;
 }
 
+.open-tutorial-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  background-color: $oscuro;
+  border-radius: 50%;
+  border: none;
+  width: 4.5rem;
+  height: 4.5rem;
+  box-shadow: 0 0 10px rgba(209, 183, 183, 0.2);
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: $grey;
+  }
+  &:after {
+    content: '?';
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+  }
+}
+
 .btn-container {
   display: flex;
   justify-content: center;
