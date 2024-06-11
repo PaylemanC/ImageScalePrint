@@ -2,7 +2,7 @@
   <input type="text" placeholder="Título" id="pdf-title">
   <div class="btn-container primary-buttons">
     <button class="upload-btn--modal btn primary-btn" (click)="openModalImage()"><span></span>Subir imagen</button>
-    <button class="download-btn btn primary-btn"><span></span>Descargar PDF</button>
+    <button class="download-btn btn primary-btn" (click)="downloadPDF()"><span></span>Descargar PDF</button>
   </div>
   <app-canvas (pdfCanvas)="receiveCanvas($event)" (orientationA4)="receiveOrientation($event)" (bordersA4)="receiveBorders($event)"></app-canvas>
 </div>
