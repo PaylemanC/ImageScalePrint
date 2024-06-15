@@ -1,1 +1,13 @@
-<p>tutorial works!</p>
+<div class="carousel">
+  <div *ngFor="let slide of slides; let i = index" class="carousel-item" [class.active]="i === currentIndex">
+    <div class="carousel-img--container">
+      <img [src]="slide.image" alt="Imagen de tutorial {{slide.title}}" class="carousel-img">
+    </div>
+    <p *ngIf="slide.title" class="carousel-title">{{ slide.title }}</p>
+    <p  class="carousel-content" [innerHTML]="slide.content"></p>
+  </div>
+  <div class="carousel-btn--container">
+    <button (click)="prevSlide()" class="carousel-btn">Anterior</button>
+    <button (click)="nextSlide()" class="carousel-btn">Siguiente</button>
+  </div>
+</div>
