@@ -1,27 +1,21 @@
 # ImageScalePrint
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+*Este proyecto es uno de los DEMO Open Source desarrollado originalmente para [Sublimación STAMPAD](https://stampad.mercadoshops.com.ar/). Está bajo licencia MIT.
 
-## Development server
+Esta herramienta sirve para crear archivos PDF con imágenes a centímetros subidas por el usuario, para luego imprimirse en hojas A4 según sus márgenes y orientación. ✨ 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<img src="src/assets/images/screenshot.png" alt="Screenshot">
 
-## Code scaffolding
+## Instalación & Dependencias
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+[Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* **`npm install` para instalar todas las dependencias.**
+* `ng serve` levantar el servidor de desarrollo en `http://localhost:4200/`.
+  
+**Librerías Externas:**
+| Nombre       | Versión | Uso              | Documentación/Demo web                       |
+|--------------|---------|------------------|----------------------------------------------|
+| [fabric.js](https://github.com/fabricjs/fabric.js)    | v5.3.0  | Manipulación de imágenes para canvas HTML5 | http://fabricjs.com/docs/ |
+| [jspdf](https://github.com/parallax/jsPDF)        | v2.5.1  | Generación de PDF A4 a partir de un canvas | https://rawgit.com/MrRio/jsPDF/master/docs/index.html |
+| [ngx-toastr](https://github.com/scttcper/ngx-toastr)   | v16.2.0 | Notificaciones emergentes | https://ngx-toastr.vercel.app/ |
