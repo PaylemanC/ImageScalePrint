@@ -5,6 +5,7 @@
     <button class="download-btn btn primary-btn" (click)="downloadPDF()"><span></span>Descargar PDF</button>
   </div>
   <app-canvas (pdfCanvas)="receiveCanvas($event)" (orientationA4)="receiveOrientation($event)" (bordersA4)="receiveBorders($event)"></app-canvas>
+  <p id="mobile">Este demo no está disponible para la versión Móvil o Tablet. Por favor, abra la página web desde una computadora.</p>
 </div>
 <button (click)="openModalTutorial()" class="open-tutorial-btn"></button>
 <app-modal [isOpenModal]="showModalImage" (modalClosed)="onModalImageClosed()">

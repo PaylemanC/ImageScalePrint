@@ -91,3 +91,23 @@
 .upload-btn--modal span {
   @include span-icons('../assets/icons/cloud-upload.svg', 24px, 24px);
 }
+
+#mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1150px) {
+  #pdf-title, .btn-container, app-canvas, .open-tutorial-btn {
+    display: none;
+  }
+
+  #printing {
+    height: 100vh;
+    justify-content: center;
+  }
+
+  #mobile {
+    display: block;
+    text-align: center;
+  }
+}
